@@ -26,3 +26,5 @@ For usage add in admin.py file::
 CHANGELOG:
 
 1.0.5: Fixed custom url issues
+
+1.0.6: Fixed duplicating of date_field

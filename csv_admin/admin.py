@@ -59,9 +59,9 @@ class CSVExportAdmin(admin.ModelAdmin):
     def get_list_display(self, request):
         list_display = super().get_list_display(request)
         if self.date_field is not None:
-            if isinstance(list_display, tuple):
+            if isinstance(list_display, tuple) and self.date_field not in list_display:
                 return list_display + (self.date_field,)
-            if isinstance(list_display, list):
+            if isinstance(list_display, list) and self.date_field not in list_display:
                 return list_display + [self.date_field]
         return list_display
 
