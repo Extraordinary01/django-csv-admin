@@ -45,9 +45,9 @@ class CSVExportAdmin(admin.ModelAdmin):
 
     def changelist_view(self, request, extra_context=None):
         extra_context = extra_context or {}
-        extra_context['make_table_url'] = f'csv_admin:{self.model.__name__.lower()}_make_table'
-        extra_context['delete_all_url'] = f'csv_admin:{self.model.__name__.lower()}_delete_all'
-        extra_context['import_data_url'] = f'csv_admin:{self.model.__name__.lower()}_import_data'
+        extra_context['make_table_url'] = f'admin:{self.model.__name__.lower()}_make_table'
+        extra_context['delete_all_url'] = f'admin:{self.model.__name__.lower()}_delete_all'
+        extra_context['import_data_url'] = f'admin:{self.model.__name__.lower()}_import_data'
         return super().changelist_view(request, extra_context)
 
     def get_additional_fields(self) -> list:
